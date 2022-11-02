@@ -1,0 +1,79 @@
+{
+  "Stocks": [
+    {
+      "CompanyName": "IRCTC",
+      "NoOfShares": 60,
+      "SharePrice": 1900
+    },
+    {
+      "CompanyName": "TCS",
+      "NoOfShares": 80,
+      "SharePrice": 800
+    },
+    {
+      "CompanyName": "Wipro",
+      "NoOfShares": 75,
+      "SharePrice": 900
+    },
+    {
+      "CompanyName": "Airtel",
+      "NoOfShares": 85,
+      "SharePrice": 600
+    },
+    {
+      "CompanyName": "VI",
+      "NoOfShares": 78,
+      "SharePrice": 400
+    },
+    {
+      "CompanyName": "JIO",
+      "NoOfShares": 90,
+      "SharePrice": 1200
+    },
+    {
+      "CompanyName": "Tech Mahindra",
+      "NoOfShares": 65,
+      "SharePrice": 1100
+    },
+    {
+      "CompanyName": "Bharat Forge",
+      "NoOfShares": 88,
+      "SharePrice": 1000
+    },
+    {
+      "CompanyName": "TATA Motors",
+      "NoOfShares": 82,
+      "SharePrice": 1500
+    },
+    {
+      "CompanyName": "Maruti Suzuki",
+      "NoOfShares": 79,
+      "SharePrice": 1250
+    },
+    {
+      "CompanyName": "HONDA",
+      "NoOfShares": 92,
+      "SharePrice": 750
+    },
+    {
+      "CompanyName": "Hero",
+      "NoOfShares": 76,
+      "SharePrice": 876
+    },
+    {
+      "CompanyName": "Mindtree",
+      "NoOfShares": 88,
+      "SharePrice": 1300
+    },
+    {
+      "CompanyName": "Siemens",
+      "NoOfShares": 45,
+      "SharePrice": 1050
+    },
+    {
+      "CompanyName": "Capgimini",
+      "NoOfShares": 50,
+      "SharePrice": 1500
+    }
+  ]
+}
