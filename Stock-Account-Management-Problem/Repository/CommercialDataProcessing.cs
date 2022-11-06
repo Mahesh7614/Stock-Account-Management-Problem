@@ -70,7 +70,7 @@ namespace Stock_Account_Management_Problem.Repository
             }
             if (!CompanyExist)
             {
-                Console.WriteLine("Company Name Dosen't Exist in Company List");
+                Console.WriteLine($"{CompanyName} Dosen't Exist in Company List");
 
             }
             SaveComapny();
@@ -106,14 +106,14 @@ namespace Stock_Account_Management_Problem.Repository
                     }
                     else
                     {
-                        Console.WriteLine($"Insufficient Balance in Customer Account Name {CustomerName}");
+                        Console.WriteLine($"Insufficient Balance in {CustomerName} Account ");
                     }
                     break;
                 }
             }
             if (!CustomerExist)
             {
-                Console.WriteLine("Customer Name Doesn't Exits in Customer List");
+                Console.WriteLine($"{CustomerName} Doesn't Exits in Customer List");
 
             }
 
@@ -167,7 +167,7 @@ namespace Stock_Account_Management_Problem.Repository
             }
             if (!CustomerExist)
             {
-                Console.WriteLine("Customer Name Doesn't Exits in Customer List");
+                Console.WriteLine($"{CustomerName} Doesn't Exits in Customer List");
 
             }
             SaveCustomer();
@@ -195,26 +195,26 @@ namespace Stock_Account_Management_Problem.Repository
             }
             SaveComapny();
         }
-        public void ValueOfAccounts(string CutomerName)
+        public void ValueOfAccounts(string CustomerName)
         {
             double TotalValue = 0;
             bool CustomerExist = false;
             StockAccounts();
             foreach (var item in stockAccounts)
             {
-                if (item.CustomerInfo.Name == CutomerName)
+                if (item.CustomerInfo.Name == CustomerName)
                 {
                     CustomerExist = true;   
                     foreach (var shares in item.ShareDetail)
                     {
                         TotalValue += shares.NoOfShares * shares.SharePrice;
                     }
-                    Console.WriteLine($"Total Value of stocks of {CutomerName} is {TotalValue}");
+                    Console.WriteLine($"Total Value of stocks of {CustomerName} is {TotalValue}");
                 }
             }
             if (!CustomerExist)
             {
-                Console.WriteLine("Customer Name Doesn't Exits in Customer List");
+                Console.WriteLine($"{CustomerName} Doesn't Exits in Customer List");
             }
         }
         public void DisplayCustomerInfo()
@@ -228,25 +228,26 @@ namespace Stock_Account_Management_Problem.Repository
                     "\nEmail : " + CustomerInfo.CustomerInfo.Email +
                     "\nAddress : " + CustomerInfo.CustomerInfo.Address +
                     "\nBalance : " + CustomerInfo.CustomerInfo.Balance);
-                Console.WriteLine("---------------------------------------------");
                
                 foreach (ShareDetail shares in CustomerInfo.ShareDetail)
                 {
+                    Console.WriteLine("---------------------------------------------");
                     Console.Write("Company Name : " + shares.CompanyName +
                     "\nNumber of Shares : " + shares.NoOfShares +
-                    "\nPrice Per Share : " + shares.SharePrice + "\n");
-                    Console.WriteLine("---------------------------------------------");
+                    "\nPrice Per Share : " + shares.SharePrice + "\n");  
                 }
                 Console.WriteLine("=============================================");
             }
         }
         public void DisplayCustomerInfo1(string CustomerName)
         {
+            bool CustomerExist = false;
             StockAccounts();
             foreach (StockAccount CustomerInfo in stockAccounts)
             {
                 if (CustomerInfo.CustomerInfo.Name == CustomerName)
                 {
+                    CustomerExist = true;
                     Console.WriteLine("Customer Name : " + CustomerInfo.CustomerInfo.Name +
                         "\nMobile Number : " + CustomerInfo.CustomerInfo.MobileNumber +
                         "\nEmail : " + CustomerInfo.CustomerInfo.Email +
@@ -264,6 +265,10 @@ namespace Stock_Account_Management_Problem.Repository
                     }
                     break;
                 }
+            }
+            if (!CustomerExist)
+            {
+                Console.WriteLine($"{CustomerName} Doesn't Exits in Customer List");
             }
         }
 

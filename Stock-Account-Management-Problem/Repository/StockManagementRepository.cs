@@ -26,17 +26,23 @@ namespace Stock_Account_Management_Problem.Repository
         }
         public void StockPortfolio1(string CompnayName)
         {
+            bool CompanyExist = false;
             string JsonFileData = File.ReadAllText(JsonFilePath);
             StocksModel StocksData = JsonConvert.DeserializeObject<StocksModel>(JsonFileData);
             foreach (var Stocks in StocksData.Stocks)
             {
                 if (Stocks.CompanyName == CompnayName)
                 {
+                    CompanyExist = true;
                     Console.Write("Company Name : " + Stocks.CompanyName +
                     "\nNumber of Stocks : " + Stocks.NoOfShares +
                     "\nPrice Of One Share : Rs." + Stocks.SharePrice + "\n\n");
                     break;
                 }
+            }
+            if (!CompanyExist) ;
+            {
+                Console.WriteLine($"{CompnayName} Doesn't Exist in Company List");
             }
 
         }
