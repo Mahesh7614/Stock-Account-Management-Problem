@@ -1,54 +1,64 @@
 {
   "Stocks": [
     {
-      "CompanyName": "IRCTC",
+      "CompanyName": "INDIAN RAILWAY",
       "NoOfShares": 2000,
-      "SharePrice": 1900.0
+      "SharePrice": 1900.0,
+      "StockSymbol": "IRCTC"
     },
     {
-      "CompanyName": "TCS",
+      "CompanyName": "TATA CONSULTANCY SERVICES",
       "NoOfShares": 800,
-      "SharePrice": 800.0
+      "SharePrice": 800.0,
+      "StockSymbol": "TCS"
     },
     {
       "CompanyName": "Wipro",
       "NoOfShares": 400,
-      "SharePrice": 900.0
+      "SharePrice": 900.0,
+      "StockSymbol": "WP@"
     },
     {
       "CompanyName": "Airtel",
       "NoOfShares": 300,
-      "SharePrice": 600.0
+      "SharePrice": 600.0,
+      "StockSymbol": "AIT"
     },
     {
-      "CompanyName": "VI",
+      "CompanyName": "VADAFONE IDEA",
       "NoOfShares": 80,
-      "SharePrice": 400.0
+      "SharePrice": 400.0,
+      "StockSymbol": "VI"
     },
     {
-      "CompanyName": "JIO",
+      "CompanyName": "Joint Implementation Opportunities",
       "NoOfShares": 120,
-      "SharePrice": 1200.0
+      "SharePrice": 1200.0,
+      "StockSymbol": "JIO"
     },
     {
       "CompanyName": "Reliance",
       "NoOfShares": 150,
-      "SharePrice": 500.0
+      "SharePrice": 500.0,
+      "StockSymbol": "RL"
     },
     {
       "CompanyName": "TATA",
       "NoOfShares": 200,
-      "SharePrice": 900.0
+      "SharePrice": 900.0,
+      "StockSymbol": "TATA@"
     },
     {
       "CompanyName": "Google",
       "NoOfShares": 100,
-      "SharePrice": 1000.0
+      "SharePrice": 1000.0,
+      "StockSymbol": "G"
     },
     {
       "CompanyName": "Apple",
       "NoOfShares": 100,
-      "SharePrice": 650.0
+      "SharePrice": 650.0,
+      "StockSymbol": "A"
     }
   ]
 }

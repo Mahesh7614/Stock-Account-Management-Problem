@@ -9,14 +9,16 @@
     },
     "ShareDetail": [
       {
-        "CompanyName": "IRCTC",
+        "CompanyName": "INDIAN RAILWAY",
         "NoOfShares": 20,
-        "SharePrice": 1900.0
+        "SharePrice": 1900.0,
+        "StockSymbol": "IRCTC"
       },
       {
-        "CompanyName": "TCS",
+        "CompanyName": "TATA CONSULTANCY SERVICES",
         "NoOfShares": 10,
-        "SharePrice": 800.0
+        "SharePrice": 800.0,
+        "StockSymbol": "TCS"
       }
     ]
   },
@@ -32,7 +34,8 @@
       {
         "CompanyName": "Apple",
         "NoOfShares": 15,
-        "SharePrice": 500.0
+        "SharePrice": 500.0,
+        "StockSymbol": "A"
       }
     ]
   },
@@ -48,7 +51,8 @@
       {
         "CompanyName": "Reliance",
         "NoOfShares": 10,
-        "SharePrice": 500.0
+        "SharePrice": 500.0,
+        "StockSymbol": "RL"
       }
     ]
   }

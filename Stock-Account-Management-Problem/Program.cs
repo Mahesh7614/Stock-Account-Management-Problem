@@ -85,7 +85,10 @@ namespace Stock_Account_Management_Problem
                         
                         Console.Write("Enter Share Per Price : ");
                         double SharePerPrice = Convert.ToDouble(Console.ReadLine());
-                        dataProcessing.AddCompany(ComapnyName, NoOfShares, SharePerPrice);
+
+                        Console.Write("Enter Stock Symbol : ");
+                        string StockSymbol = Console.ReadLine();
+                        dataProcessing.AddCompany(ComapnyName, NoOfShares, SharePerPrice,StockSymbol);
                         repository.StockPortfolio1(ComapnyName);
                         break;
 

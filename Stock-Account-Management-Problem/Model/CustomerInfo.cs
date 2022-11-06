@@ -19,6 +19,7 @@ namespace Stock_Account_Management_Problem.Model
         public string CompanyName { get; set; }
         public int NoOfShares { get; set; }
         public double SharePrice { get; set; }
+        public string StockSymbol { get; set; }
     }
     public class StockAccount
     {

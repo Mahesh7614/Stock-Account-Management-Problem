@@ -57,6 +57,7 @@ namespace Stock_Account_Management_Problem.Repository
                                 total = shares * item.SharePrice;
                                 StockCompanyName = item.CompanyName;
                                 StockSharePrices = item.SharePrice;
+                                StockSymbol = item.StockSymbol;
                             }
                             else
                             {
@@ -96,7 +97,7 @@ namespace Stock_Account_Management_Problem.Repository
                             }
                             if (!Exit)
                             {
-                                items.ShareDetail.Add(new ShareDetail() { CompanyName = StockCompanyName, NoOfShares = shares, SharePrice = StockSharePrices});
+                                items.ShareDetail.Add(new ShareDetail() { CompanyName = StockCompanyName, NoOfShares = shares, SharePrice = StockSharePrices, StockSymbol = StockSymbol });
 
                             }
                             Console.WriteLine($"\n<<<<<<<<<<<<<<< {CustomerName} have SucessFully Purchased {shares} Stocks of {StockCompanyName} ({StockSymbol}) at Price Rs.{StockSharePrices} >>>>>>>>>>>>>>>>");
@@ -121,6 +122,7 @@ namespace Stock_Account_Management_Problem.Repository
         public void SellStocks(string CustomerName, string CompanyName, int shares)
         {
             double StockSharePrices = 0;
+            string StockSymbol = " ";
             bool CompanyExist = false;
             bool CustomerExist = false;
             bool CompanyExistAtCustomer = false;
@@ -139,10 +141,11 @@ namespace Stock_Account_Management_Problem.Repository
                             CompanyExistAtCustomer = true;
                             if (shareitem.NoOfShares >= shares)
                             {
-                                shareitem.NoOfShares -= shares;
-                                StockSharePrices = shareitem.SharePrice;
+                                item2.NoOfShares -= shares;
+                                StockSharePrices = item2.SharePrice;
+                                StockSymbol = item2.StockSymbol;
 
-                                if (shareitem.NoOfShares == 0)
+                                if (item2.NoOfShares == 0)
                                 {
                                     items.ShareDetail.Remove(shareitem);
                                 }
@@ -160,8 +163,8 @@ namespace Stock_Account_Management_Problem.Repository
                         Console.WriteLine($"{CompanyName} doesn't Exits in {CustomerName} Share Details");
                     }
                     items.CustomerInfo.Balance += shares * StockSharePrices;
-                    Console.WriteLine($"\n<<<<<<<<<<<<<<< {CustomerName} have SucessFully Sold {shares} Stocks of {CompanyName} of at Price Rs.{StockSharePrices} >>>>>>>>>>>>>>>>");
-                    Console.WriteLine($"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Total Balance of {CustomerName} is Rs.{items.CustomerInfo.Balance} >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+                    Console.WriteLine($"\n<<<<<<<<<<<<<<< {CustomerName} have SucessFully Sold {shares} Stocks of {CompanyName} ({StockSymbol}) of at Price Rs.{StockSharePrices} >>>>>>>>>>>>>>>>");
+                    Console.WriteLine($"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Total Balance of {CustomerName} ({StockSymbol}) is Rs.{items.CustomerInfo.Balance} >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
                     break;
                 }
             }
@@ -182,7 +185,6 @@ namespace Stock_Account_Management_Problem.Repository
                     {
                         if (Customeritem.CustomerInfo.Name == CustomerName)
                         {
-
                             item.NoOfShares += shares;
                             break;
                         }
@@ -191,7 +193,7 @@ namespace Stock_Account_Management_Problem.Repository
             }
             if (!CompanyExist)
             {
-                StocksData.Stocks.Add(new CommonProperties { CompanyName = CompanyName, NoOfShares = shares, SharePrice = StockSharePrices});
+                StocksData.Stocks.Add(new CommonProperties { CompanyName = CompanyName, NoOfShares = shares, SharePrice = StockSharePrices, StockSymbol = StockSymbol });
             }
             SaveComapny();
         }
@@ -234,7 +236,8 @@ namespace Stock_Account_Management_Problem.Repository
                     Console.WriteLine("---------------------------------------------");
                     Console.Write("Company Name : " + shares.CompanyName +
                     "\nNumber of Shares : " + shares.NoOfShares +
-                    "\nPrice Per Share : " + shares.SharePrice + "\n");
+                    "\nPrice Per Share : " + shares.SharePrice +
+                    "\nStock Symbol : " + shares.StockSymbol + "\n");
                 }
                 Console.WriteLine("=============================================");
             }
@@ -259,7 +262,8 @@ namespace Stock_Account_Management_Problem.Repository
                     {
                         Console.Write("Company Name : " + shares.CompanyName +
                         "\nNumber of Shares : " + shares.NoOfShares +
-                        "\nPrice Per Share : " + shares.SharePrice + "\n");
+                        "\nPrice Per Share : " + shares.SharePrice +
+                        "\nStock Symbol : " + shares.StockSymbol + "\n");
 
                         Console.WriteLine("---------------------------------------------");
                     }
@@ -271,10 +275,10 @@ namespace Stock_Account_Management_Problem.Repository
                 Console.WriteLine($"{CustomerName} Doesn't Exits in Customer List");
             }
         }
-        public void AddCompany(string CompanyName, int NoOfshares, double SharePrice)
+        public void AddCompany(string CompanyName, int NoOfshares, double SharePrice, string stockSymbol)
         {
             CompanyAccount();
-            StocksData.Stocks.Add(new CommonProperties { CompanyName = CompanyName, NoOfShares = NoOfshares, SharePrice = SharePrice});
+            StocksData.Stocks.Add(new CommonProperties { CompanyName = CompanyName, NoOfShares = NoOfshares, SharePrice = SharePrice, StockSymbol = stockSymbol });
             SaveComapny();
             Console.WriteLine($"\n********* Successfull Added the {CompanyName} in Comapny List *********\n");
         }
@@ -282,7 +286,7 @@ namespace Stock_Account_Management_Problem.Repository
         {
             CompanyAccount();
             StockManagementRepository stock = new StockManagementRepository();
-            foreach(var stockitem in StocksData.Stocks)
+            foreach (var stockitem in StocksData.Stocks)
             {
                 if (stockitem.CompanyName == companyName)
                 {
