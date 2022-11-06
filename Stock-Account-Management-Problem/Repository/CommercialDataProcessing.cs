@@ -141,11 +141,11 @@ namespace Stock_Account_Management_Problem.Repository
                             CompanyExistAtCustomer = true;
                             if (shareitem.NoOfShares >= shares)
                             {
-                                item2.NoOfShares -= shares;
-                                StockSharePrices = item2.SharePrice;
-                                StockSymbol = item2.StockSymbol;
+                                shareitem.NoOfShares -= shares;
+                                StockSharePrices = shareitem.SharePrice;
+                                StockSymbol = shareitem.StockSymbol;
 
-                                if (item2.NoOfShares == 0)
+                                if (shareitem.NoOfShares == 0)
                                 {
                                     items.ShareDetail.Remove(shareitem);
                                 }
