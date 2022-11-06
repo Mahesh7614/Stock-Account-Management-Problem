@@ -181,11 +181,10 @@ namespace Stock_Account_Management_Problem.Repository
                 {
 
                     CompanyExist = true;
-                    foreach (StockAccount item2 in stockAccounts)
+                    foreach (StockAccount Customeritem in stockAccounts)
                     {
-                        if (item.CompanyName == CompanyName)
+                        if (Customeritem.CustomerInfo.Name == CustomerName)
                         {
-
                             item.NoOfShares += shares;
                             break;
                         }
@@ -287,8 +286,15 @@ namespace Stock_Account_Management_Problem.Repository
         {
             CompanyAccount();
             StockManagementRepository stock = new StockManagementRepository();
-            StocksData.Stocks.Remove(new CommonProperties { CompanyName = companyName });
-            SaveComapny();
+            foreach (var stockitem in StocksData.Stocks)
+            {
+                if (stockitem.CompanyName == companyName)
+                {
+                    Predicate<CommonProperties> RemoveComapany = X => X == stockitem;
+                    StocksData.Stocks.RemoveAll(RemoveComapany);
+                    break;
+                }
+            }
             Console.WriteLine($"\n********* Successfull Removed the {companyName} in Comapny List *********\n");
             stock.StockPortfolio();
         }
