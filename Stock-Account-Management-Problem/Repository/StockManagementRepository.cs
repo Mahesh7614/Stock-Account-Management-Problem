@@ -40,7 +40,7 @@ namespace Stock_Account_Management_Problem.Repository
                     break;
                 }
             }
-            if (!CompanyExist) ;
+            if (!CompanyExist) 
             {
                 Console.WriteLine($"{CompnayName} Doesn't Exist in Company List");
             }
