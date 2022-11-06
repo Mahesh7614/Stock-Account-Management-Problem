@@ -8,17 +8,18 @@ namespace Stock_Account_Management_Problem.Repository
     {
         public static string CustomerInfoFilePath = @"C:\Users\Mahesh\OneDrive\Desktop\Assignments\RFP .Net Assignment\Stock-Account-Management-Problem\Stock-Account-Management-Problem\JSONFile\CustomerInfo.json";
         public static string JsonFilePath = @"C:\Users\Mahesh\OneDrive\Desktop\Assignments\RFP .Net Assignment\Stock-Account-Management-Problem\Stock-Account-Management-Problem\JSONFile\StocksData.json";
-        string JsonFileData = File.ReadAllText(JsonFilePath);
-        string Accounts = File.ReadAllText(CustomerInfoFilePath);
+
         List<StockAccount> stockAccounts = new List<StockAccount>();
         StocksModel StocksData = new StocksModel();
 
         public void StockAccounts()
         {
+            string Accounts = File.ReadAllText(CustomerInfoFilePath);
             stockAccounts = JsonConvert.DeserializeObject<List<StockAccount>>(Accounts);
         }
         public void CompanyAccount()
         {
+            string JsonFileData = File.ReadAllText(JsonFilePath);
             StocksData = JsonConvert.DeserializeObject<StocksModel>(JsonFileData);
         }
         public void SaveComapny()
@@ -163,7 +164,7 @@ namespace Stock_Account_Management_Problem.Repository
                         Console.WriteLine($"{CompanyName} doesn't Exits in {CustomerName} Share Details");
                     }
                     items.CustomerInfo.Balance += shares * StockSharePrices;
-                    Console.WriteLine($"\n<<<<<<<<<<<<<<< {CustomerName} have SucessFully Sold {shares} Stocks of {CompanyName} ({StockSymbol}) of at Price Rs.{StockSharePrices} >>>>>>>>>>>>>>>>");
+                    Console.WriteLine($"\n<<<<<<<<<<<<<<< {CustomerName} have SucessFully Sold {shares} Stocks of {CompanyName} ({StockSymbol}) at Price Rs.{StockSharePrices} >>>>>>>>>>>>>>>>");
                     Console.WriteLine($"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Total Balance of {CustomerName} ({StockSymbol}) is Rs.{items.CustomerInfo.Balance} >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
                     break;
                 }
