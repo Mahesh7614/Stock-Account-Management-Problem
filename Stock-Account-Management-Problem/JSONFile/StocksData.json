@@ -1,1 +1,54 @@
-{"Stocks":[{"CompanyName":"IRCTC","NoOfShares":2000,"SharePrice":1900.0},{"CompanyName":"TCS","NoOfShares":800,"SharePrice":800.0},{"CompanyName":"Wipro","NoOfShares":400,"SharePrice":900.0},{"CompanyName":"Airtel","NoOfShares":300,"SharePrice":600.0},{"CompanyName":"VI","NoOfShares":80,"SharePrice":400.0},{"CompanyName":"JIO","NoOfShares":120,"SharePrice":1200.0},{"CompanyName":"Reliance","NoOfShares":150,"SharePrice":500.0},{"CompanyName":"TATA","NoOfShares":200,"SharePrice":900.0},{"CompanyName":"Google","NoOfShares":100,"SharePrice":1000.0},{"CompanyName":"Apple","NoOfShares":100,"SharePrice":650.0}]}
+{
+  "Stocks": [
+    {
+      "CompanyName": "IRCTC",
+      "NoOfShares": 2000,
+      "SharePrice": 1900.0
+    },
+    {
+      "CompanyName": "TCS",
+      "NoOfShares": 800,
+      "SharePrice": 800.0
+    },
+    {
+      "CompanyName": "Wipro",
+      "NoOfShares": 400,
+      "SharePrice": 900.0
+    },
+    {
+      "CompanyName": "Airtel",
+      "NoOfShares": 300,
+      "SharePrice": 600.0
+    },
+    {
+      "CompanyName": "VI",
+      "NoOfShares": 80,
+      "SharePrice": 400.0
+    },
+    {
+      "CompanyName": "JIO",
+      "NoOfShares": 120,
+      "SharePrice": 1200.0
+    },
+    {
+      "CompanyName": "Reliance",
+      "NoOfShares": 150,
+      "SharePrice": 500.0
+    },
+    {
+      "CompanyName": "TATA",
+      "NoOfShares": 200,
+      "SharePrice": 900.0
+    },
+    {
+      "CompanyName": "Google",
+      "NoOfShares": 100,
+      "SharePrice": 1000.0
+    },
+    {
+      "CompanyName": "Apple",
+      "NoOfShares": 100,
+      "SharePrice": 650.0
+    }
+  ]
+}
