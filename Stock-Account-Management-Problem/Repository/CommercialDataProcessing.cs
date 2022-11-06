@@ -271,6 +271,21 @@ namespace Stock_Account_Management_Problem.Repository
                 Console.WriteLine($"{CustomerName} Doesn't Exits in Customer List");
             }
         }
-
+        public void AddCompany(string CompanyName, int NoOfshares, double SharePrice)
+        {
+            CompanyAccount();
+            StocksData.Stocks.Add(new CommonProperties { CompanyName = CompanyName, NoOfShares = NoOfshares, SharePrice = SharePrice });
+            SaveComapny();
+            Console.WriteLine($"********* Successfull Added the {CompanyName} in Comapny List *********");
+        }
+        public void RemoveComapny(string CompanyName)
+        {
+            CompanyAccount();
+            StockManagementRepository stock = new StockManagementRepository();
+            StocksData.Stocks.Remove(new CommonProperties { CompanyName = CompanyName });
+            SaveComapny();            
+            Console.WriteLine($"********* Successfull Removed the {CompanyName} in Comapny List *********");
+            stock.StockPortfolio();
+        }        
     }
 }
