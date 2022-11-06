@@ -295,6 +295,7 @@ namespace Stock_Account_Management_Problem.Repository
                     break;
                 }
             }
+            SaveComapny();
             Console.WriteLine($"\n********* Successfull Removed the {companyName} in Comapny List *********\n");
             stock.StockPortfolio();
         }
