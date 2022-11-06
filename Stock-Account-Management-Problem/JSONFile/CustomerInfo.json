@@ -5,7 +5,7 @@
       "MobileNumber": 9028876143,
       "Email": "waghmaremahesh012@gmail.com",
       "Address": "Ahmedpur",
-      "Balance": 30000.0
+      "Balance": 26750.0
     },
     "ShareDetail": [
       {
@@ -19,6 +19,12 @@
         "NoOfShares": 10,
         "SharePrice": 800.0,
         "StockSymbol": "TCS"
+      },
+      {
+        "CompanyName": "Apple",
+        "NoOfShares": 5,
+        "SharePrice": 650.0,
+        "StockSymbol": "A"
       }
     ]
   },

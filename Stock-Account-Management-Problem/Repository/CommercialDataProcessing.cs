@@ -8,17 +8,17 @@ namespace Stock_Account_Management_Problem.Repository
     {
         public static string CustomerInfoFilePath = @"C:\Users\Mahesh\OneDrive\Desktop\Assignments\RFP .Net Assignment\Stock-Account-Management-Problem\Stock-Account-Management-Problem\JSONFile\CustomerInfo.json";
         public static string JsonFilePath = @"C:\Users\Mahesh\OneDrive\Desktop\Assignments\RFP .Net Assignment\Stock-Account-Management-Problem\Stock-Account-Management-Problem\JSONFile\StocksData.json";
-        string JsonFileData = File.ReadAllText(JsonFilePath);
-        string Accounts = File.ReadAllText(CustomerInfoFilePath);
         List<StockAccount> stockAccounts = new List<StockAccount>();
         StocksModel StocksData = new StocksModel();
 
         public void StockAccounts()
         {
+            string Accounts = File.ReadAllText(CustomerInfoFilePath);
             stockAccounts = JsonConvert.DeserializeObject<List<StockAccount>>(Accounts);
         }
         public void CompanyAccount()
         {
+            string JsonFileData = File.ReadAllText(JsonFilePath);
             StocksData = JsonConvert.DeserializeObject<StocksModel>(JsonFileData);
         }
         public void SaveComapny()
@@ -100,7 +100,7 @@ namespace Stock_Account_Management_Problem.Repository
                                 items.ShareDetail.Add(new ShareDetail() { CompanyName = StockCompanyName, NoOfShares = shares, SharePrice = StockSharePrices, StockSymbol = StockSymbol });
 
                             }
-                            Console.WriteLine($"\n<<<<<<<<<<<<<<< {CustomerName} have SucessFully Purchased {shares} Stocks of {StockCompanyName} ({StockSymbol}) at Price Rs.{StockSharePrices} >>>>>>>>>>>>>>>>");
+                            Console.WriteLine($"\n<<<<<<<<<<<<<<< {CustomerName} have SucessFully Purchased {shares} Stocks of {StockCompanyName} ({StockSymbol}) for Price Rs.{StockSharePrices} each stock at {DateTime.Now} >>>>>>>>>>>>>>>>");
                             Console.WriteLine($"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Total Remaining Balance of {CustomerName} ({StockSymbol}) is Rs.{items.CustomerInfo.Balance} >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
                         }
                     }
@@ -134,20 +134,20 @@ namespace Stock_Account_Management_Problem.Repository
                 if (items.CustomerInfo.Name == CustomerName)
                 {
                     CustomerExist = true;
-                    foreach (ShareDetail shareitem in items.ShareDetail)
+                    foreach (ShareDetail Shareitem in items.ShareDetail)
                     {
-                        if (shareitem.CompanyName == CompanyName)
+                        if (Shareitem.CompanyName == CompanyName)
                         {
                             CompanyExistAtCustomer = true;
-                            if (shareitem.NoOfShares >= shares)
+                            if (Shareitem.NoOfShares >= shares)
                             {
-                                shareitem.NoOfShares -= shares;
-                                StockSharePrices = shareitem.SharePrice;
-                                StockSymbol = shareitem.StockSymbol;
+                                Shareitem.NoOfShares -= shares;
+                                StockSharePrices = Shareitem.SharePrice;
+                                StockSymbol = Shareitem.StockSymbol;
 
-                                if (shareitem.NoOfShares == 0)
+                                if (Shareitem.NoOfShares == 0)
                                 {
-                                    items.ShareDetail.Remove(shareitem);
+                                    items.ShareDetail.Remove(Shareitem);
                                 }
                                 break;
                             }
@@ -163,7 +163,7 @@ namespace Stock_Account_Management_Problem.Repository
                         Console.WriteLine($"{CompanyName} doesn't Exits in {CustomerName} Share Details");
                     }
                     items.CustomerInfo.Balance += shares * StockSharePrices;
-                    Console.WriteLine($"\n<<<<<<<<<<<<<<< {CustomerName} have SucessFully Sold {shares} Stocks of {CompanyName} ({StockSymbol}) of at Price Rs.{StockSharePrices} >>>>>>>>>>>>>>>>");
+                    Console.WriteLine($"\n<<<<<<<<<<<<<<< {CustomerName} have SucessFully Sold {shares} Stocks of {CompanyName} ({StockSymbol}) for Price Rs.{StockSharePrices} each stock at {DateTime.Now} >>>>>>>>>>>>>>>>");
                     Console.WriteLine($"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Total Balance of {CustomerName} ({StockSymbol}) is Rs.{items.CustomerInfo.Balance} >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
                     break;
                 }
