@@ -18,7 +18,8 @@ namespace Stock_Account_Management_Problem.Repository
             {               
                 Console.Write("Company Name : " + Stocks.CompanyName +
                 "\nNumber of Stocks : " + Stocks.NoOfShares +
-                "\nPrice Of One Share : Rs." + Stocks.SharePrice + "\n");
+                "\nPrice Of One Share : Rs." + Stocks.SharePrice +
+                "\nStock Symbol : " + Stocks.StockSymbol + "\n");
                 
                 Console.WriteLine("---------------------------------------------");
             }
@@ -36,11 +37,12 @@ namespace Stock_Account_Management_Problem.Repository
                     CompanyExist = true;
                     Console.Write("Company Name : " + Stocks.CompanyName +
                     "\nNumber of Stocks : " + Stocks.NoOfShares +
-                    "\nPrice Of One Share : Rs." + Stocks.SharePrice + "\n\n");
+                    "\nPrice Of One Share : Rs." + Stocks.SharePrice + 
+                    "\nStock Symbol : " + Stocks.StockSymbol + "\n\n");
                     break;
                 }
             }
-            if (!CompanyExist) ;
+            if (!CompanyExist) 
             {
                 Console.WriteLine($"{CompnayName} Doesn't Exist in Company List");
             }
