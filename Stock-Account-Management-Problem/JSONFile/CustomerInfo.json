@@ -1,1 +1,65 @@
-[{"CustomerInfo":{"Name":"Mahesh","MobileNumber":9028876143,"Email":"waghmaremahesh012@gmail.com","Address":"Ahmedpur","Balance":29350.0},"ShareDetail":[{"CompanyName":"INDIAN RAILWAY","NoOfShares":20,"SharePrice":1900.0,"StockSymbol":"IRCTC"},{"CompanyName":"TATA CONSULTANCY SERVICES","NoOfShares":10,"SharePrice":800.0,"StockSymbol":"TCS"},{"CompanyName":"Apple","NoOfShares":1,"SharePrice":650.0,"StockSymbol":"A"}]},{"CustomerInfo":{"Name":"Umesh","MobileNumber":9405773453,"Email":"umeshwaghmare014@gmail.com","Address":"Ahmedpur","Balance":30000.0},"ShareDetail":[{"CompanyName":"Apple","NoOfShares":15,"SharePrice":500.0,"StockSymbol":"A"}]},{"CustomerInfo":{"Name":"Yashwant","MobileNumber":8856956513,"Email":"yashwant151197@gmail.com","Address":"Parbhani","Balance":30000.0},"ShareDetail":[{"CompanyName":"Reliance","NoOfShares":10,"SharePrice":500.0,"StockSymbol":"RL"}]}]
+[
+  {
+    "CustomerInfo": {
+      "Name": "Mahesh",
+      "MobileNumber": 9028876143,
+      "Email": "waghmaremahesh012@gmail.com",
+      "Address": "Ahmedpur",
+      "Balance": 29350.0
+    },
+    "ShareDetail": [
+      {
+        "CompanyName": "INDIAN RAILWAY",
+        "NoOfShares": 20,
+        "SharePrice": 1900.0,
+        "StockSymbol": "IRCTC"
+      },
+      {
+        "CompanyName": "TATA CONSULTANCY SERVICES",
+        "NoOfShares": 10,
+        "SharePrice": 800.0,
+        "StockSymbol": "TCS"
+      },
+      {
+        "CompanyName": "Apple",
+        "NoOfShares": 1,
+        "SharePrice": 650.0,
+        "StockSymbol": "A"
+      }
+    ]
+  },
+  {
+    "CustomerInfo": {
+      "Name": "Umesh",
+      "MobileNumber": 9405773453,
+      "Email": "umeshwaghmare014@gmail.com",
+      "Address": "Ahmedpur",
+      "Balance": 30000.0
+    },
+    "ShareDetail": [
+      {
+        "CompanyName": "Apple",
+        "NoOfShares": 15,
+        "SharePrice": 500.0,
+        "StockSymbol": "A"
+      }
+    ]
+  },
+  {
+    "CustomerInfo": {
+      "Name": "Yashwant",
+      "MobileNumber": 8856956513,
+      "Email": "yashwant151197@gmail.com",
+      "Address": "Parbhani",
+      "Balance": 30000.0
+    },
+    "ShareDetail": [
+      {
+        "CompanyName": "Reliance",
+        "NoOfShares": 10,
+        "SharePrice": 500.0,
+        "StockSymbol": "RL"
+      }
+    ]
+  }
+]
