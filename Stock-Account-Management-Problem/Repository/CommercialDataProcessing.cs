@@ -286,8 +286,7 @@ namespace Stock_Account_Management_Problem.Repository
             {
                 if (stockitem.CompanyName == companyName)
                 {
-                    Predicate<CommonProperties> RemoveComapany = X => X == stockitem;
-                    StocksData.Stocks.RemoveAll(RemoveComapany);
+                    StocksData.Stocks.Remove(stockitem);
                     break;
                 }
             }
